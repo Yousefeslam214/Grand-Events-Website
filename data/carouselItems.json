@@ -1,0 +1,20 @@
+[
+  {
+    "id": 0,
+    "image": "/img/slider/slide1.jpg",
+    "title": "First slide label",
+    "description": "Some representative placeholder content"
+  },
+  {
+    "id": 1,
+    "image": "/img/slider/slide2.jpg",
+    "title": "Second slide label",
+    "description": "More placeholder content here"
+  },
+  {
+    "id": 2,
+    "image": "/img/slider/slide3.jpg",
+    "title": "Third slide label",
+    "description": "Final placeholder content"
+  }
+]
