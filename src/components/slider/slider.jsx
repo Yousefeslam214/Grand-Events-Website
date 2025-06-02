@@ -43,12 +43,17 @@ const Slider = ({ items }) => {
       style={{
         position: "relative",
         width: "100%",
-        height: "100%",
+        aspectRatio: "16/9", // e.g., 16:9 ratio (common for banners)
+        // height: "500px", // Fixed height
+
+        // height: "100%",
         overflow: "hidden",
-        touchAction: "pan-y", // Add this line
+        // touchAction: "pan-y", // Add this line
       }}>
       <button
-        className="absolute  z-2 right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-white hover:bg-black/50 transition-all duration-300 transform hover:scale-110"
+        className=" 
+        hidden sm:inline
+        absolute  z-2 right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-white hover:bg-black/50 transition-all duration-300 transform hover:scale-110"
         aria-label="Next slide"
         onClick={nextSlide}>
         <svg
@@ -87,17 +92,31 @@ const Slider = ({ items }) => {
               src={item.image}
               alt={item.title || "Carousel image"}
               layout="responsive"
+              // fill
               width={800}
               height={400}
               objectFit="cover"
             />
             {(item.title || item.description) && (
-              <div className="absolute inset-0 flex flex-col justify-center items-center text-center bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-center bg-gradient-to-t from-black/70 to-transparent p-4 text-white ">
                 <motion.div
                   key={currentIndex}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}>
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="
+                  mt-4
+                  items-center justify-center
+                  ">
+                  {item.description && (
+                    <motion.p
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.5 }}
+                      className="mt-2 md:mt-3   text-xs  sm:text-sm   md:text-lg     lg:text-xl     leading-relaxedtracking-normaltext-center    max-w-2xl      mx-auto        px-4 sm:px-6   text-gray-100  opacity-90">
+                      {item.description}
+                    </motion.p>
+                  )}
                   {/* Title */}
                   {item.title && (
                     <motion.h1
@@ -105,13 +124,16 @@ const Slider = ({ items }) => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.3 }}
                       className="
-                      text-2xl sm:text-3xl
+                      text-2xl
+                      xs:text-sm
+                      sm:text-xs
+
                       md:text-4xl
                       lg:text-5xl
                       xl:text-6xl   
                       font-bold 
                       mb-2
-                      md:mb-4 
+                      md:mb-4
                       leading-tight 
                       tracking-tight
                       text-center
@@ -122,35 +144,13 @@ const Slider = ({ items }) => {
                   )}
 
                   {/* Description */}
-                  {item.description && (
-                    <motion.p
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.5 }}
-                      className="
-                mt-2 md:mt-3   
-                text-sm        
-                sm:text-base   
-                md:text-lg     
-                lg:text-xl     
-                leading-relaxed
-                tracking-normal
-                text-center    
-                max-w-2xl      
-                mx-auto        
-                px-4 sm:px-6   
-                text-gray-100  
-                opacity-90     
-              ">
-                      {item.description}
-                    </motion.p>
-                  )}
                   <motion.button
                     style={{ backgroundColor: "#ea1e63" }}
-                    className="text-white px-4 py-2 rounded-sm mt-4 
-                                    text-xs md:text-sm  lg:text-base xl:text-lg"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}>
+                    className=" btn
+                    text-white px-4 py-2 rounded-sm  text-xs md:text-sm  lg:text-base xl:text-lg"
+                    // whileHover={{ scale: 1.1 }}
+                    // whileTap={{ scale: 0.9 }}
+                  >
                     EXPLORE
                   </motion.button>
                 </motion.div>
@@ -161,7 +161,9 @@ const Slider = ({ items }) => {
       </div>
 
       <button
-        className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-white hover:bg-black/50 transition-all duration-300 transform hover:scale-110"
+        className="
+       hidden sm:inline
+        absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-white hover:bg-black/50 transition-all duration-300 transform hover:scale-110"
         onClick={prevSlide}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -183,9 +185,11 @@ const Slider = ({ items }) => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-3 w-3 rounded-full ${
-              currentIndex === index ? " bg-white scale-115" : "bg-gray-400"
-            }`}
+            className={`
+                hidden sm:inline
+                h-3 w-3 rounded-full ${
+                  currentIndex === index ? " bg-white scale-115" : "bg-gray-400"
+                }`}
           />
         ))}
       </div>

@@ -4,7 +4,8 @@ import "../styles/globals.css";
 import Nav from "@/src/components/nav/nav";
 import Footer from "@/src/components/footer/footer";
 import Head from "next/head";
-import HeaderSlider from "@/src/components/header/header";
+import Header from "@/src/components/header/header";
+// import HeaderSlider from "@/src/components/header/header";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -15,8 +16,8 @@ export default function App({ Component, pageProps }) {
           content="This is a sample Next.js application with a global layout including a navigation bar and footer."
         />
       </Head>
-      <HeaderSlider />
-      <Nav />
+      <Header />
+      {/* <Nav /> */}
       <Component {...pageProps} />
       <Footer />
     </>

@@ -14,13 +14,105 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --textColor: #212121;
+    --background: #ffffff;
   }
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--textColor);
   font-family: Arial, Helvetica, sans-serif;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  /* font-family: "Josefin Sans", sans-serif; */
+}
+
+/* Next Event page */
+.animate-fadeIn {
+  animation: fadeIn ease-in-out 0.6s forwards;
+  -webkit-animation: fadeIn ease-in-out 0.6s forwards;
+}
+.next-event-black {
+  color: var(--textColor);
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn {
+  font-size: 14px;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 400;
+  color: var(--background);
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  display: inline-block;
+}
+
+.btn:hover {
+  color: var(--background);
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+}
+.shadow-box {
+  box-shadow: 1px 10px 20px rgba(0, 0, 0, 0.2);
+}
+.section-title {
+  font-size: 36px;
+  color: #212121;
+  line-height: 52px;
+  padding-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 22px;
+  }
+}
+@media (max-width: 991px) {
+  .section-title {
+    position: relative;
+    margin-bottom: 10px;
+  }
+}
+.animation-ease-in-out {
+  transition: all 0.2s ease-in-out;
+}
+.animation-ease-in-up {
+  transition: all 0.2s ease-in-up;
+  -webkit-transition: all 0.2s ease-in-up;
+  -moz-transition: all 0.2s ease-in-up;
+  -ms-transition: all 0.2s ease-in-up;
+  -o-transition: all 0.2s ease-in-up;
+}
+.itemsCenterSmall {
+  @media (max-width: 896px) {
+    /* display: flex;
+    justify-content: center; */
+    align-items: center;
+  }
 }
