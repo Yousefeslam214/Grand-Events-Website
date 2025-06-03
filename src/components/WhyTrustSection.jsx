@@ -28,7 +28,7 @@ export default function WhyTrustSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.15, duration: 0.5 }}
-              viewport={{ once: true }}
+              //   viewport={{ once: true }}
               className="flex items-start space-x-4 ">
               <div className=" text-white bg-[#E91E63] text-xl rounded-full w-6 h-6 flex items-center justify-center shadow-md">
                 {item.icon}
