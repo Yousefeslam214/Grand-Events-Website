@@ -67,6 +67,7 @@ import Image from "next/image";
 import { FaFacebookF, FaWhatsapp, FaLinkedinIn } from "react-icons/fa";
 import FAQSection from "@/src/components/FAQSection";
 import WhyTrustSection from "@/src/components/WhyTrustSection";
+import VisionMission from "@/src/components/VisionMission";
 
 const About = () => {
   return (
@@ -388,6 +389,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      <VisionMission />
     </section>
   );
 };
