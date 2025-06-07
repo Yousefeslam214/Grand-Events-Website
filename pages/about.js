@@ -1,26 +1,44 @@
 import React from "react";
 import Image from "next/image";
-import { FaFacebookF, FaWhatsapp, FaLinkedinIn } from "react-icons/fa";
-import FAQSection from "@/src/components/FAQSection";
-import WhyTrustSection from "@/src/components/WhyTrustSection";
-import VisionMission from "@/src/components/VisionMission";
 import Link from "next/link";
-import TestimonialsSection from "@/src/components/Testimonials";
-import ServicesSection from "@/src/components/ServicesSection";
-import CTASection from "@/src/components/CTASection";
+import { FaFacebookF, FaWhatsapp } from "react-icons/fa";
+import dynamic from "next/dynamic";
+
+const FAQSection = dynamic(() => import("@/src/components/FAQSection"));
+const WhyTrustSection = dynamic(() =>
+  import("@/src/components/WhyTrustSection")
+);
+const VisionMission = dynamic(() => import("@/src/components/VisionMission"));
+const TestimonialsSection = dynamic(() =>
+  import("@/src/components/Testimonials")
+);
+const ServicesSection = dynamic(() =>
+  import("@/src/components/ServicesSection")
+);
+const CTASection = dynamic(() => import("@/src/components/CTASection"));
+// import FAQSection from "@/src/components/FAQSection";
+// import WhyTrustSection from "@/src/components/WhyTrustSection";
+// import VisionMission from "@/src/components/VisionMission";
+// import TestimonialsSection from "@/src/components/Testimonials";
+// import ServicesSection from "@/src/components/ServicesSection";
+// import CTASection from "@/src/components/CTASection";
+import { LinkedinIcon } from "@/src/components/icons";
 
 const About = () => {
   return (
     <section className="px-4 mt-18 ">
-      {/* <section className="px-4 mt-18"> */}
       <div className="relative rounded-lg overflow-hidden max-w-screen-xl mx-auto min-h-[24rem] md:min-h-[30rem] lg:min-h-[36rem]">
         <Image
           src="/assets/large-group-fans-with-arms-raised-having-fun-music-concert-night.webp"
           alt="Event Agency Hero"
-          fill
           className="object-cover w-full h-full"
+          width={1920}
+          height={1080}
+          quality={75}
           priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
+
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="absolute inset-0 grid grid-cols-1 md:grid-cols-2 z-10 text-white h-full">
           <div className="flex flex-col justify-center px-6 py-8 md:py-12 space-y-4 text-balance">
@@ -45,7 +63,7 @@ const About = () => {
           </div>
           <div
             className="flex items-center justify-center px-6 mt-12 py-8 md:py-12 *:
-          sm:hidden md:block
+          sm:hidden md:flex
           ">
             <div className="bg-white p-6 shadow-lg rounded-lg w-full max-w-sm space-y-4 transition-all duration-300">
               <h2 className="text-xl text-black font-bold">Working Hours</h2>
@@ -167,38 +185,19 @@ const About = () => {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19846.51598589966!2d106.8166666!3d-6.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3c1e2f62c0f%3A0x3dbac6fdc0406e4a!2sJakarta%2C%20Indonesia!5e0!3m2!1sen!2seg!4v1717420000000"
                 allowFullScreen=""
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"></iframe>
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
             <h4 className="text-md md:text-lg font-medium mb-1.5 mt-3">
               Jakarta Headquarters
             </h4>
             <p className="text-base md:text-md leading-relaxed text-gray-700">
               We operate globally with a strong presence in the MENA region.
-              Let's meet and create something unforgettable.
+              Let`s meet and create something unforgettable.
             </p>
           </div>
 
-          <div
-            className="
-  flex 
-  items-center 
-  justify-center
-          2xs:flex 
-          2xs:items-center 
-          2xs:justify-center
-
-          xs:flex 
-          xs:items-center 
-          xs:justify-center
-
-          xs:flex 
-          xs:items-center 
-          xs:justify-center
-          sm:flex 
-          sm:items-center 
-          sm:justify-center
-          md:block
-          ">
+          <div className="flex items-center justify-center 2xs:flex  2xs:items-center  2xs:justify-center xs:flex  xs:items-center  xs:justify-center xs:flex  xs:items-center  xs:justify-center sm:flex  sm:items-center  sm:justify-center md:block">
             <div>
               <h3 className="text-lg md:text-xl font-semibold mb-2.5 flex">
                 Follow Us
@@ -215,7 +214,7 @@ const About = () => {
                 <a
                   href="https://www.linkedin.com/in/yousef-eslam-dev/"
                   aria-label="LinkedIn">
-                  <FaLinkedinIn className="hover:scale-110 transition-transform" />
+                  <LinkedinIcon className=" w-6 h-6" />
                 </a>
               </div>
             </div>
