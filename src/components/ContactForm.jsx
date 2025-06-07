@@ -1,4 +1,7 @@
+"use client";
+
 import React, { useState } from "react";
+import { FaSpinner } from "react-icons/fa";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +10,8 @@ const ContactForm = () => {
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,20 +21,67 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
-    // Add your form submission logic here
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitStatus({
+          success: true,
+          message: "Message sent successfully!",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus({
+          success: false,
+          message: data.message || "Failed to send message",
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        success: false,
+        message: "Network error. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {submitStatus && (
+        <div
+          className={`p-4 rounded-md ${
+            submitStatus.success
+              ? "bg-green-100 text-green-800"
+              : "bg-red-100 text-red-800"
+          }`}>
+          {submitStatus.message}
+        </div>
+      )}
+
       <div>
         <label
           htmlFor="name"
           className="block text-sm font-medium text-gray-700 mb-1">
-          Full Name
+          Full Name <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
@@ -47,7 +99,7 @@ const ContactForm = () => {
           <label
             htmlFor="email"
             className="block text-sm font-medium text-gray-700 mb-1">
-            Email
+            Email <span className="text-red-500">*</span>
           </label>
           <input
             type="email"
@@ -81,7 +133,7 @@ const ContactForm = () => {
         <label
           htmlFor="message"
           className="block text-sm font-medium text-gray-700 mb-1">
-          Your Message
+          Your Message <span className="text-red-500">*</span>
         </label>
         <textarea
           id="message"
@@ -96,8 +148,16 @@ const ContactForm = () => {
       <div>
         <button
           type="submit"
-          className="px-6 py-3 bg-[#E91E63] text-white rounded-md hover:bg-[#d81b60] transition-colors w-full md:w-auto">
-          Send Message
+          disabled={isSubmitting}
+          className="px-6 py-3 bg-[#E91E63] text-white rounded-md hover:bg-[#d81b60] transition-colors w-full md:w-auto flex items-center justify-center gap-2">
+          {isSubmitting ? (
+            <>
+              <FaSpinner className="animate-spin" />
+              Sending...
+            </>
+          ) : (
+            "Send Message"
+          )}
         </button>
       </div>
     </form>
