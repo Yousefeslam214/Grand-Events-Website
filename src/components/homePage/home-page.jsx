@@ -20,7 +20,7 @@ const HomePage = ({ data }) => {
             <div className="relative h-48 w-full">
               <Image
                 src={ev.image}
-                alt={ev.name}
+                alt={ev.name || "Event Image"}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
