@@ -92,7 +92,10 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a
                 href="https://facebook.com/yousefeslam214"
-                className="text-gray-400 hover:text-white transition">
+                className="text-gray-400 hover:text-white transition"
+                aria-label="Follow us on Facebook"
+                title="Facebook"
+              >
                 <svg
                   className="w-6 h-6"
                   fill="currentColor"
@@ -107,7 +110,10 @@ const Footer = () => {
               </a>
               <a
                 href="https://www.linkedin.com/in/yousef-eslam-dev/"
-                className="text-gray-400 hover:text-white transition">
+                className="text-gray-400 hover:text-white transition"
+                aria-label="Follow us on LinkedIn"
+                title="LinkedIn"
+              >
                 <svg
                   className="w-6 h-6"
                   fill="currentColor"
@@ -118,7 +124,10 @@ const Footer = () => {
               </a>
               <a
                 href="https://facebook.com/yousefeslam214"
-                className="text-gray-400 hover:text-white transition">
+                className="text-gray-400 hover:text-white transition"
+                aria-label="Follow us on Instagram"
+                title="Instagram"
+              >
                 <svg
                   className="w-6 h-6"
                   fill="currentColor"
