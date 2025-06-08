@@ -1,4 +1,3 @@
-"use client";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
@@ -130,6 +129,7 @@ export default function Carousel({
                   ? "transition-transform duration-500 ease-in-out"
                   : ""
               }`}
+              priority
             />
             {(item.title || item.description) && (
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
