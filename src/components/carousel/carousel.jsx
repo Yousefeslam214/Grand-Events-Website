@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import Image from "next/image";
 
 export default function Carousel({
   items,
@@ -121,7 +122,7 @@ export default function Carousel({
                   : "opacity-0"
                 : ""
             }`}>
-            <img
+            <Image
               src={item.image}
               alt={item.title || "Carousel image"}
               className={`w-full h-auto object-cover ${

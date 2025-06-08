@@ -134,6 +134,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Header() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -197,7 +198,14 @@ export default function Header() {
           variant="h6"
           sx={{ flexGrow: 1, textShadow: "0.3px 0.3px 30.6px #E91E63" }}>
           <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
-            Grand Events
+            {/* Grand Events */}
+            <Image
+              src="/img/logo.png"
+              alt="Logo"
+              width={120}
+              height={60}
+              className="mt-[-5px]"
+            />
           </Link>
         </Typography>
 
