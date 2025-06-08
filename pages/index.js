@@ -21,7 +21,6 @@ import { Box } from "@mui/material";
 
 export default function Home(props) {
   const { data, carouselItems } = props; // Destructure carouselItems from props
-  console.log(data);
 
   return (
     <Box className="flex flex-col min-h-screen bg-gray-100 ">
