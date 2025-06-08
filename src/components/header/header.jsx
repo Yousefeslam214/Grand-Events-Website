@@ -1,126 +1,3 @@
-// import {
-//   AppBar,
-//   Toolbar,
-//   Typography,
-//   Button,
-//   IconButton,
-//   Menu,
-//   MenuItem,
-//   useScrollTrigger,
-// } from "@mui/material";
-// import MenuIcon from "@mui/icons-material/Menu";
-// import Link from "next/link";
-// import { useState } from "react";
-
-// export default function Header() {
-//   const [anchorEl, setAnchorEl] = useState(null);
-//   const trigger = useScrollTrigger({ threshold: 100 });
-
-//   const handleMenu = (event) => setAnchorEl(event.currentTarget);
-//   const handleClose = () => setAnchorEl(null);
-
-//   return (
-//     // <AppBar
-//     //   position="fixed"
-//     //   elevation={trigger ? 4 : 0}
-//     //   sx={{
-//     //     background: trigger ? "white" : "transparent",
-//     //     transition: "all 0.3s ease",
-//     //     color: trigger ? "black" : "white",
-//     //   }}
-//     //   // className="container mx-auto self-center"
-//     // >
-//     <AppBar
-//       position="fixed"
-//       elevation={trigger ? 4 : 0}
-//       sx={{
-//         background: trigger ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 0)",
-//         backdropFilter: "blur(10px)",
-//         WebkitBackdropFilter: "blur(10px)", // for Safari
-//         transition: "all 0.3s ease",
-//         color: trigger ? "black" : "black",
-//         boxShadow: "0 4px 20px rgba(0,0,0,0.08), 0 1.5px 4px rgba(0,0,0,0.06)",
-//       }}>
-//       <Toolbar
-//         className="container mx-auto "
-//         sx={
-//           {
-//             // display: "flex",
-//             // justifyContent: "space-between",
-//             // px: 0, // Remove default padding
-//           }
-//         }>
-//         {/* Logo */}
-//         <Typography
-//           variant="h6"
-//           sx={{ flexGrow: 1, textShadow: "0.3px 0.3px 30.6px #E91E63" }}>
-//           <Link
-//             href="/"
-//             style={{
-//               //  color: "white",
-//               textDecoration: "none",
-//             }}>
-//             Grand Events
-//           </Link>
-//         </Typography>
-
-//         {/* Desktop Nav */}
-//         <div
-//           className="hidden md:flex gap-4"
-//           sx={{ flexGrow: 1, textShadow: "0.3px 0.3px 30px #E91E63" }}>
-//           <Link href="/events" passHref>
-//             <Button
-//               color="inherit"
-//               sx={{ textShadow: "0.3px 0.3px 30px #E91E63" }}>
-//               Events
-//             </Button>
-//           </Link>
-//           <Link href="/about" passHref>
-//             <Button
-//               color="inherit"
-//               sx={{ textShadow: "0.3px 0.3px 30px #E91E63" }}>
-//               About
-//             </Button>
-//           </Link>
-//           <Link href="/contact" passHref>
-//             <Button
-//               color="inherit"
-//               sx={{ textShadow: "0.3px 0.3px 30px #E91E63" }}>
-//               Contact
-//             </Button>
-//           </Link>
-//         </div>
-
-//         {/* Mobile Menu */}
-//         <div className="md:hidden">
-//           <IconButton
-//             size="large"
-//             edge="start"
-//             color="inherit"
-//             aria-label="menu"
-//             onClick={handleMenu}>
-//             <MenuIcon />
-//           </IconButton>
-//           <Menu
-//             anchorEl={anchorEl}
-//             open={Boolean(anchorEl)}
-//             onClose={handleClose}>
-//             <MenuItem onClick={handleClose}>
-//               <Link href="/events">Events</Link>
-//             </MenuItem>
-//             <MenuItem onClick={handleClose}>
-//               <Link href="/about">About</Link>
-//             </MenuItem>
-//             <MenuItem onClick={handleClose}>
-//               <Link href="/contact">Contact</Link>
-//             </MenuItem>
-//           </Menu>
-//         </div>
-//       </Toolbar>
-//     </AppBar>
-//   );
-// }
-"use client";
 import {
   AppBar,
   Toolbar,
@@ -129,62 +6,43 @@ import {
   IconButton,
   Menu,
   MenuItem,
-  useScrollTrigger,
+  useScrollTrigger, // Removed to avoid module error
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 export default function Header() {
   const [anchorEl, setAnchorEl] = useState(null);
-  const trigger = useScrollTrigger({ threshold: 100 });
-  const [isDarkBg, setIsDarkBg] = useState(false);
+  // Set trigger color based on scroll position (first 100px)
+  // const [triggerColor, setTriggerColor] = useState("rgba(234, 30, 99, 1)");
 
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY < 100) {
+  //       setTriggerColor("rgba(234, 30, 99, 1)");
+  //     } else {
+  //       setTriggerColor("rgba(234, 30, 99, 0.3)");
+  //     }
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
+  const trigger = useScrollTrigger({ threshold: 100 }); // Removed to avoid module error
   const handleMenu = (event) => setAnchorEl(event.currentTarget);
   const handleClose = () => setAnchorEl(null);
-
-  // Function to detect brightness of background image
-  useEffect(() => {
-    const checkBackgroundBrightness = () => {
-      const canvas = document.createElement("canvas");
-      canvas.width = 1;
-      canvas.height = 1;
-      const ctx = canvas.getContext("2d");
-
-      const bodyStyles = window.getComputedStyle(document.body);
-      const bgImage = bodyStyles.backgroundImage;
-
-      if (!bgImage || bgImage === "none") return;
-
-      const url = bgImage.match(/url\(["']?([^"')]+)["']?\)/)?.[1];
-
-      if (!url) return;
-
-      const img = new Image();
-      img.crossOrigin = "anonymous";
-      img.src = url;
-
-      img.onload = () => {
-        ctx.drawImage(img, 0, 0, 1, 1);
-        const pixel = ctx.getImageData(0, 0, 1, 1).data;
-        const brightness =
-          (pixel[0] * 299 + pixel[1] * 587 + pixel[2] * 114) / 1000;
-        setIsDarkBg(brightness < 128);
-      };
-    };
-
-    checkBackgroundBrightness();
-  }, []);
 
   return (
     <AppBar
       position="fixed"
-      elevation={trigger ? 4 : 0}
+      elevation={4}
       sx={{
-        background: trigger
-          ? "rgba(255, 255, 255, 0.8)"
-          : "rgba(255, 255, 255,0.35)",
+        background: "rgba(234, 30, 99, 1)",
+        // ? "rgba(234, 30, 99, 1)"
+        // : // : "rgba(255, 255, 255,0.45)",
+        // "rgba(234, 30, 99,0.3)",
+
         backdropFilter: "blur(10px)",
         WebkitBackdropFilter: "blur(10px)",
         transition: "all 0.3s ease",
@@ -197,15 +55,40 @@ export default function Header() {
         <Typography
           variant="h6"
           sx={{ flexGrow: 1, textShadow: "0.3px 0.3px 30.6px #E91E63" }}>
-          <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <Link
+            href="/"
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+            }}
+            sx={
+              {
+                // border: "1px solid rgba(255, 255, 255,0.05)",
+                // backgroundColor: "rgba(255, 255, 255,0.55)",
+              }
+            }>
+            {/* <Box
+              sx={{
+                background: "#ffffff",
+                width: "120px",
+                p: 2,
+                borderRadius: "8px",
+              }}> */}
             {/* Grand Events */}
             <Image
               src="/img/logo.png"
               alt="Logo"
-              width={120}
-              height={60}
+              width={140}
+              height={70}
               className="mt-[-5px]"
+              sx={{
+                border: "1px solid rgba(255, 255, 255,0.05)",
+                color: "black",
+                boxShadow:
+                  "0 4px 20px rgba(0,0,0,0.08), 0 1.5px 4px rgba(0,0,0,0.06)",
+              }}
             />
+            {/* </Box> */}
           </Link>
         </Typography>
 
@@ -213,17 +96,31 @@ export default function Header() {
         <div className="hidden md:flex gap-4">
           <Link href="/events" passHref>
             <Button
-              color="inherit"
+              color="#E91E63"
               variant="h6"
-              sx={{ flexGrow: 1, textShadow: "0.3px 0.3px 30.6px #E91E63" }}>
+              sx={{
+                flexGrow: 1,
+                textShadow: "0.3px 0.3px 30.6px #E91E63",
+                color: "#E91E63",
+                // border: "0.01px solid #770000",
+                backgroundColor: "#ffffff",
+                borderRadius: "8px",
+              }}>
               Events
             </Button>
           </Link>
           <Link href="/about" passHref>
             <Button
-              color="inherit"
+              color="#E91E63"
               variant="h6"
-              sx={{ flexGrow: 1, textShadow: "0.3px 0.3px 30.6px #E91E63" }}>
+              sx={{
+                flexGrow: 1,
+                textShadow: "0.3px 0.3px 30.6px #E91E63",
+                color: "#E91E63",
+                // border: "0.01px solid #770000",
+                backgroundColor: "#ffffff",
+                borderRadius: "8px",
+              }}>
               About
             </Button>
           </Link>
@@ -231,7 +128,14 @@ export default function Header() {
             <Button
               color="inherit"
               variant="h6"
-              sx={{ flexGrow: 1, textShadow: "0.3px 0.3px 30.6px #E91E63" }}>
+              sx={{
+                flexGrow: 1,
+                textShadow: "0.3px 0.3px 30.6px #E91E63",
+                color: "#E91E63",
+                // border: "0.01px solid #770000",
+                backgroundColor: "#ffffff",
+                borderRadius: "8px",
+              }}>
               Contact
             </Button>
           </Link>
