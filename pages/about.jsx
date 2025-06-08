@@ -27,15 +27,17 @@ import { LinkedinIcon } from "@/src/components/icons";
 const About = () => {
   return (
     <section className="px-4 mt-18 ">
-      <div className="relative rounded-lg overflow-hidden max-w-screen-xl mx-auto min-h-[24rem] md:min-h-[30rem] lg:min-h-[36rem]">
+      <div className="relative rounded-lg overflow-hidden max-w-screen-xl mx-auto min-h-[24rem] md:min-h-[30rem] lg:min-h-[36rem] h-[90vh]">
         <Image
           src="/assets/large-group-fans-with-arms-raised-having-fun-music-concert-night.webp"
           alt="Event Agency Hero"
           className="object-cover w-full h-full"
-          width={1920}
-          height={1080}
-          quality={75}
-          priority
+          // width={1920}
+          // height={1080}
+          // quality={75}
+          fill
+          // priority
+          loading="lazy"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
 

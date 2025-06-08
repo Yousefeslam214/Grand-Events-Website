@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import dynamic from "next/dynamic";
+import { FaFacebookF, FaWhatsapp, FaLinkedinIn } from "react-icons/fa";
 
 // Dynamically load heavy components
 const ContactForm = dynamic(() => import("@/src/components/ContactForm"));
@@ -14,6 +15,8 @@ const MapSection = dynamic(() => import("@/src/components/MapSection"), {
 });
 
 const Contact = () => {
+  // Import social icons from react-icons
+
   return (
     <section className="px-4 py-12 max-w-screen-xl mx-auto mt-16">
       {/* Hero Section */}
@@ -106,34 +109,28 @@ const Contact = () => {
         <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
         <div className="flex justify-center gap-6">
           <a
-            href="https://facebook.com"
-            className="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition-colors">
-            <Image
-              src="/assets/facebook-icon.svg"
-              alt="Facebook"
-              width={24}
-              height={24}
-            />
+            href="https://facebook.com/yousefeslam214"
+            className="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition-colors"
+            aria-label="Facebook"
+            target="_blank"
+            rel="noopener noreferrer">
+            <FaFacebookF className="text-[#1877F3] text-2xl" />
           </a>
           <a
             href="https://wa.me/201005307391"
-            className="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition-colors">
-            <Image
-              src="/assets/whatsapp-icon.svg"
-              alt="WhatsApp"
-              width={24}
-              height={24}
-            />
+            className="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition-colors"
+            aria-label="WhatsApp"
+            target="_blank"
+            rel="noopener noreferrer">
+            <FaWhatsapp className="text-[#25D366] text-2xl" />
           </a>
           <a
-            href="https://linkedin.com"
-            className="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition-colors">
-            <Image
-              src="/assets/linkedin-icon.svg"
-              alt="LinkedIn"
-              width={24}
-              height={24}
-            />
+            href="https://www.linkedin.com/in/yousef-eslam-dev/"
+            className="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition-colors"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer">
+            <FaLinkedinIn className="text-[#0A66C2] text-2xl" />
           </a>
         </div>
       </div>

@@ -17,13 +17,14 @@ import EventGuideline from "@/src/components/homePage/eventGuideline";
 import BlogSection from "@/src/components/homePage/blog-section";
 import NewsletterSection from "@/src/components/homePage/newsletter-section";
 import MessageSection from "@/src/components/homePage/message-section";
+import { Box } from "@mui/material";
 
 export default function Home(props) {
   const { data, carouselItems } = props; // Destructure carouselItems from props
   console.log(data);
 
   return (
-    <>
+    <Box className="flex flex-col min-h-screen bg-gray-100 ">
       <Slider items={carouselItems} />
       <div className="min-h-screen flex flex-col bg-white">
         <div className="container mx-auto p-4">
@@ -56,7 +57,7 @@ export default function Home(props) {
       </div>
       <NewsletterSection />
       <MessageSection />
-    </>
+    </Box>
   );
 }
 

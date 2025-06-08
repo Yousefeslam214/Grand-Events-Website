@@ -181,7 +181,9 @@ export default function Header() {
       position="fixed"
       elevation={trigger ? 4 : 0}
       sx={{
-        background: trigger ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 0)",
+        background: trigger
+          ? "rgba(255, 255, 255, 0.8)"
+          : "rgba(255, 255, 255,0.35)",
         backdropFilter: "blur(10px)",
         WebkitBackdropFilter: "blur(10px)",
         transition: "all 0.3s ease",
@@ -202,13 +204,28 @@ export default function Header() {
         {/* Desktop Nav */}
         <div className="hidden md:flex gap-4">
           <Link href="/events" passHref>
-            <Button color="inherit">Events</Button>
+            <Button
+              color="inherit"
+              variant="h6"
+              sx={{ flexGrow: 1, textShadow: "0.3px 0.3px 30.6px #E91E63" }}>
+              Events
+            </Button>
           </Link>
           <Link href="/about" passHref>
-            <Button color="inherit">About</Button>
+            <Button
+              color="inherit"
+              variant="h6"
+              sx={{ flexGrow: 1, textShadow: "0.3px 0.3px 30.6px #E91E63" }}>
+              About
+            </Button>
           </Link>
           <Link href="/contact" passHref>
-            <Button color="inherit">Contact</Button>
+            <Button
+              color="inherit"
+              variant="h6"
+              sx={{ flexGrow: 1, textShadow: "0.3px 0.3px 30.6px #E91E63" }}>
+              Contact
+            </Button>
           </Link>
         </div>
         {/* Mobile Menu */}

@@ -43,12 +43,14 @@ const Slider = ({ items }) => {
       style={{
         position: "relative",
         width: "100%",
-        aspectRatio: "16/9", // e.g., 16:9 ratio (common for banners)
-        // height: "500px", // Fixed height
-
-        // height: "100%",
+        height: "100vh", // fill hero screen
         overflow: "hidden",
-        // touchAction: "pan-y", // Add this line
+        // aspectRatio: "16/9", // e.g., 16:9 ratio (common for banners)
+        // // height: "500px", // Fixed height
+
+        // // height: "100%",
+        // overflow: "hidden",
+        // // touchAction: "pan-y", // Add this line
       }}>
       <button
         className=" 
@@ -87,15 +89,17 @@ const Slider = ({ items }) => {
               width: `${100 / items.length}%`,
               flexShrink: 0,
               position: "relative",
+              height: "100vh", // full screen height
             }}>
             <Image
               src={item.image}
               alt={item.title || "Carousel image"}
-              layout="responsive"
-              // fill
-              width={800}
-              height={400}
+              // layout="responsive"
+              fill
+              // width={800}
+              // height={400}
               objectFit="cover"
+              loading="lazy"
             />
             {(item.title || item.description) && (
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center bg-gradient-to-t from-black/70 to-transparent p-4 text-white ">
