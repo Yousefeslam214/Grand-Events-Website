@@ -23,7 +23,9 @@ const NewsletterSection = () => {
               placeholder="Enter Your Email Here"
               className="flex-grow px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e91f63]"
             />
-            <button className="bg-[#e91f63] text-white px-6 py-3 rounded-md hover:bg-[#c2185b] transition-colors duration-300 font-medium">
+            <button
+              className="bg-[#e91f63] text-white px-6 py-3 rounded-md hover:bg-[#c2185b] transition-colors duration-300 font-medium"
+              aria-label="Submit form">
               SUBMIT
             </button>
           </div>
