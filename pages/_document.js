@@ -4,7 +4,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>Grand Events</title>
+      
+
         {/* LineIcons CDN */}
         {/* <link
           rel="stylesheet"

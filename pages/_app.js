@@ -11,6 +11,8 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <title>Grand Events</title>
+
         <meta
           name="description"
           content="This is a sample Next.js application with a global layout including a navigation bar and footer."
