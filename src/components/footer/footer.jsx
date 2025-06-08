@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <footer
       className="
-    pt-15
-    bg-[#222222] text-white py-12 px-4 ">
+    pt-12
+    bg-[#222222] text-white py-4 px-4 ">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* GRAND Section */}
         <div className="space-y-4">
@@ -21,45 +21,42 @@ const Footer = () => {
           <h2 className="text-xl font-semibold">QUICK LINKS</h2>
           <ul className="space-y-2 text-gray-400">
             <li>
-              <a href="#" className="hover:text-white transition">
-                Alaust Cumbresco
+              <a href="/events" className="hover:text-white transition">
+                Events
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition">
-                Our Speakers
+              <a href="/about" className="hover:text-white transition">
+                About Us
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition">
-                Event Shadows
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-white transition">
-                Latent News
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-white transition">
-                Event Photo Gallery
+              <a href="/contact" className="hover:text-white transition">
+                Contact Us
               </a>
             </li>
           </ul>
         </div>
 
-        {/* RECENT POSTS */}
+        {/* RECENT EVENTS */}
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold">RECENT POSTS</h2>
+          <h2 className="text-xl font-semibold">RECENT EVENTS</h2>
           <div className="space-y-4 text-gray-400">
-            <div className="border-b border-gray-700 pb-4">
-              <p>Lorem ipsum dolor nunc</p>
+            <div className="border-b border-gray-700 pb-4"></div>
+            <a
+              href="/events/london"
+              className="hover:text-white transition text-gray-400">
+              <p>London Tech Meetup</p>
               <p className="text-sm text-gray-500">OCTOBER 13, 2023</p>
-            </div>
-            <div className="border-b border-gray-700 pb-4">
-              <p>Lorem ipsum dolor nunc</p>
-              <p className="text-sm text-gray-500">OCTOBER 13, 2023</p>
-            </div>
+            </a>
+          </div>
+          <div className="border-b border-gray-700 pb-4">
+            <a
+              href="/events/san-francisco"
+              className="hover:text-white transition text-gray-400">
+              <p>San Francisco Startup Night</p>
+              <p className="text-sm text-gray-500">OCTOBER 20, 2023</p>
+            </a>
           </div>
         </div>
 
@@ -93,7 +90,9 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-md font-semibold">FOLLOW US ON</h4>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition">
+              <a
+                href="https://facebook.com/yousefeslam214"
+                className="text-gray-400 hover:text-white transition">
                 <svg
                   className="w-6 h-6"
                   fill="currentColor"
@@ -106,7 +105,9 @@ const Footer = () => {
                   />
                 </svg>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition">
+              <a
+                href="https://www.linkedin.com/in/yousef-eslam-dev/"
+                className="text-gray-400 hover:text-white transition">
                 <svg
                   className="w-6 h-6"
                   fill="currentColor"
@@ -115,7 +116,9 @@ const Footer = () => {
                   <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
                 </svg>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition">
+              <a
+                href="https://facebook.com/yousefeslam214"
+                className="text-gray-400 hover:text-white transition">
                 <svg
                   className="w-6 h-6"
                   fill="currentColor"
@@ -132,10 +135,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      {/* <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
-        <p>© {new Date().getFullYear()} GRAND Events. All Rights Reserved.</p>
-      </div> */}
     </footer>
   );
 };
