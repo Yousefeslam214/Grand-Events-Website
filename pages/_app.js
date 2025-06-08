@@ -5,7 +5,7 @@ import Head from "next/head";
 import Header from "@/src/components/header/header";
 // import "../styles/vendor/lineicons.css";
 // import "../styles/vendor/fontawesome.css";
-import "../styles/all.main.css";
+// import "../styles/all.main.css";
 
 export default function App({ Component, pageProps }) {
   return (
