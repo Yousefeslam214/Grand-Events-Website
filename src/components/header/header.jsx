@@ -143,6 +143,7 @@ export default function Header() {
         {/* Mobile Menu */}
         <div className="md:hidden">
           <IconButton
+            sx={{ color: "white" }}
             size="large"
             edge="start"
             color="inherit"

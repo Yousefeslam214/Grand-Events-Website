@@ -100,7 +100,7 @@ const SpeakersPic = ({ pic, head, description, num }) => {
         ">
           {/* LinkedIn SVG Icon */}
           <a
-            href="#"
+            href="https://www.linkedin.com/in/yousef-eslam-dev"
             className="
             bg-[#ea1e63]
             p-3
@@ -127,7 +127,7 @@ const SpeakersPic = ({ pic, head, description, num }) => {
 
           {/* Facebook SVG Icon */}
           <a
-            href="#"
+            href="https://www.facebook.com/yousefeslam214"
             className="
             bg-[#ea1e63]
             p-3

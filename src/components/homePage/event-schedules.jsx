@@ -86,7 +86,7 @@ const Schedules = () => {
         content="Event Schedules"
         second="Join the Global Grand Event on Digital Design and Innovation"
       />
-      <EventBox activeDay={activeDay} />
+      <EventBox activeDay={activeDay} setActiveDay={setActiveDay} />
     </section>
   );
 };
@@ -99,7 +99,7 @@ const WhyUsBox = ({ icon, head, description, num }) => {
         transition-all 
       ">
       <div className="icon mb-4 text-5xl text-white">
-        <i className={`lni lni-${icon}  transition-colors `}></i>
+        <i className={`lni lni-${icon}  black black-color `}></i>
       </div>
       <h3 className="text-xl font-bold mb-2 text-white">{head}</h3>
       <p className="text-white text-sm mb-2">{description}</p>
@@ -108,8 +108,8 @@ const WhyUsBox = ({ icon, head, description, num }) => {
   );
 };
 
-const EventBox = () => {
-  const [activeDay, setActiveDay] = useState("monday");
+const EventBox = ({ activeDay, setActiveDay }) => {
+  // const [activeDay, setActiveDay] = useState("monday");
 
   return (
     <div className="max-w-6xl mx-auto p-6 flex flex-col gap-6 md:flex-row lg:flex-row">

@@ -12,6 +12,10 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <title>Grand Events</title>
+        <link
+          rel="stylesheet"
+          href="https://cdn.lineicons.com/3.0/lineicons.css"
+        />
 
         <meta
           name="description"
