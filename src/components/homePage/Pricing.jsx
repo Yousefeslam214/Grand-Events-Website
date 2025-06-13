@@ -92,14 +92,19 @@ const Pricing = () => {
           py: { xs: 4, md: 8 },
           px: { xs: 2, md: 4 },
           backdropFilter: "blur(4px)",
-          "-webkit-backdrop-filter": "blur(4px)", // Safari support
+          WebkitBackdropFilter: "blur(10px)",
         }}>
         <HeadPage
           content="Pricing Plans"
           second="Choose the perfect plan for your needs"
         />
 
-        <Grid container spacing={4} justifyContent="center" sx={{ mt: 6 }}>
+        <Grid
+          container
+          columns={12}
+          spacing={4}
+          justifyContent="center"
+          sx={{ mt: 6 }}>
           {pricingTiers.map((tier, index) => (
             <Grid
               item

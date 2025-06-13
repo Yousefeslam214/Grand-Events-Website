@@ -98,7 +98,7 @@ const Slider = ({ items }) => {
               fill
               // width={800}
               // height={400}
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
               loading="lazy"
             />
             {(item.title || item.description) && (

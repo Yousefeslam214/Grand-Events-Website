@@ -14,7 +14,13 @@ const Sponsors = () => {
         second="Global Grand Event on Digital Design"
       />
 
-      <Grid container spacing={4} justifyContent="center" sx={{ mt: 4 }}>
+      <Grid
+        container
+        columns={12}
+        // spacing={2}
+        spacing={4}
+        justifyContent="center"
+        sx={{ mt: 4 }}>
         {sponsorLogos.map((logoNum) => (
           <Grid item xs={6} sm={4} md={3} key={logoNum}>
             <Box

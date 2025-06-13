@@ -125,7 +125,9 @@ const EventBox = ({ activeDay, setActiveDay }) => {
               onClick={() => setActiveDay(dayKey)}
               className={`
                 min-w-[200px] min-h-[60] h-[75]
-                px-6 py-3 font-medium transition-colors duration-200 ease-in-out  // Longer duration for smoother transitionw-full sm:w-[calc(100%/3.1)] sm:min-w-[200px]relative
+                px-6 py-3 font-medium transition-colors 
+                duration-200 ease-in-out
+                
                 ${
                   activeDay === dayKey
                     ? "bg-[#ea1e63] text-white"

@@ -9,7 +9,6 @@ const NextEvent = () => {
         section-title
         animate-fadeIn
         ">
-          {/* // text-3xl text-center uppercase animate-fadeIn next-event-black leading-[48px] */}
           Next Event Will Start In
         </h2>
       </div>

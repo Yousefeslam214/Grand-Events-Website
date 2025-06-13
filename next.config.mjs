@@ -57,9 +57,6 @@ const nextConfig = {
       },
     ];
   },
-
-  // ✅ Optional: enable SWC minification (enabled by default in newer Next.js versions)
-  swcMinify: true,
 };
 
 export default nextConfig;
