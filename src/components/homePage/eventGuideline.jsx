@@ -62,6 +62,7 @@ const EventGuideline = () => {
        ">
           <Typography
             variant="h5"
+            component="h4" // 👈 fix here
             sx={{
               fontWeight: 600,
               mb: 4,

@@ -129,7 +129,11 @@ const Pricing = () => {
                       : "0 8px 20px rgba(0,0,0,0.12)",
                   },
                 }}>
-                <Typography variant="h5" fontWeight="bold" gutterBottom>
+                <Typography
+                  component="h3"
+                  variant="h5"
+                  fontWeight="bold"
+                  gutterBottom>
                   {tier.name}
                 </Typography>
 

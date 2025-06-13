@@ -60,7 +60,7 @@ const Question = () => {
           borderRadius: 2,
           boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
         }}>
-        <Typography variant="h5" gutterBottom sx={{ mb: 3, fontWeight: 600 }}>
+        <Typography variant="h2" gutterBottom sx={{ mb: 3, fontWeight: 600 }}>
           Common Questions
         </Typography>
 
