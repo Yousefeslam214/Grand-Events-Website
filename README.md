@@ -1,41 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+  <h1>🎉 Grand Events - Web Application</h1>
+  <p>A modern events web platform built with <strong>Next.js 15</strong> and <strong>Material UI v6</strong>. It offers a clean user interface and responsive design for event listings, company info, and contact forms.</p>
+  <div class="section">
+    <h2>🚀 Technologies Used</h2>
+    <ul>
+      <li>Next.js 15 (Turbopack)</li>
+      <li>React 18</li>
+      <li>Material UI v6 (MUI System, AppBar, Grid v2)</li>
+      <li>Tailwind CSS (partially)</li>
+      <li>Next Image Optimization</li>
+    </ul>
+  </div>
 
-## Getting Started
+  <div class="section screenshot">
+    <h2>📸 First Screen (UI)</h2>
+    <img src="screenshots/first-screen.jpg" alt="UI Screenshot of Grand Events homepage">
+  </div>
 
-First, run the development server:
+  <div class="section screenshot">
+    <h2>⚡ Performance Report</h2>
+    <img src="screenshots/performance-report.jpg" alt="Lighthouse Performance Screenshot">
+  </div>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+  <div class="section">
+    <h2>🛠️ How to Run Locally</h2>
+    <pre><code>git clone https://github.com/yourusername/grand-events.git
+cd grand-events
+npm install
+npm run dev</code></pre>
+    <p>Then open <code>http://localhost:3000</code> in your browser.</p>
+  </div>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  <div class="section">
+    <h2>📂 Folder Structure</h2>
+    <pre><code>.
+├── components/
+├── pages/
+├── public/
+│   └── img/
+├── styles/
+├── next.config.mjs
+└── README.html</code></pre>
+  </div>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
-# Grand-Events-Website
+  <footer>
+    <p>Made with ❤️ by Your Name</p>
+  </footer>
