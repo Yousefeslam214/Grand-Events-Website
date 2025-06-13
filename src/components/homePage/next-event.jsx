@@ -1,10 +1,8 @@
 import React from "react";
 
-
 const NextEvent = () => {
   return (
     <>
-     
       <div className="px-[68px] py-[10px] mt-2">
         <h2
           className="
@@ -23,12 +21,22 @@ const NextEvent = () => {
           <TimeBox value="Seconds" num="00" />
         </div>
         <div className="text-center mt-4">
-          <button
+          {/* <button
             className="btn bg-[#ea1e63] text-white px-4 py-2 rounded-sm text-xs md:text-sm lg:text-base xl:text-lg
           mb-20
           ">
             ADD TO MY CALENDER
+          </button> */}
+          <button
+            className="btn bg-[#ea1e63] text-black
+ px-4 py-2 rounded-sm text-xs md:text-sm lg:text-base xl:text-lg
+          mb-20
+          ">
+            ADD TO MY CALENDER
           </button>
+          {/* <button className="bg-[#ea1e63] text-black px-4 py-2 rounded-sm ...">
+            ADD TO MY CALENDER
+          </button> */}
         </div>
       </div>
     </>

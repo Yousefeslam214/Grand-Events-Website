@@ -31,7 +31,10 @@ const HomePage = ({ data }) => {
                 {ev.title}
               </h2>
               <p className="text-gray-600  line-clamp-2">{ev.description}</p>
-              <button className="mt-4 px-4 py-2 bg-[#ed0d5d] text-white rounded-md transition-colors duration-300 hover:bg-black text-sm pointer-events-none z-10">
+              <button
+                className="mt-4 px-4 py-2 bg-[#ed0d5d]
+               text-white rounded-md transition-colors duration-300
+                 text-sm pointer-events-none z-10">
                 Read More
               </button>
             </div>

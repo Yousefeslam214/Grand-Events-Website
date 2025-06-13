@@ -31,7 +31,11 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/contact" className="hover:text-white transition">
+              <a
+                href="/contact"
+                className="
+              
+              hover:text-white transition">
                 Contact Us
               </a>
             </li>
@@ -72,10 +76,22 @@ const Footer = () => {
                 text-black 
                 border-gray-700 rounded-l focus:outline-none focus:border-blue-500"
               />
-              <button
+              {/* <button
                 className="bg-[#E91E63] hover:bg-[#E91E63] px-4 py-2 rounded-r transition
               cursor-pointer
               ">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                </svg>
+              </button> */}
+              <button
+                className="bg-[#E91E63] hover:bg-[#E91E63] px-4 py-2 rounded-r transition cursor-pointer"
+                aria-label="Submit" // ← Describe what the button does
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -94,8 +110,7 @@ const Footer = () => {
                 href="https://facebook.com/yousefeslam214"
                 className="text-gray-400 hover:text-white transition"
                 aria-label="Follow us on Facebook"
-                title="Facebook"
-              >
+                title="Facebook">
                 <svg
                   className="w-6 h-6"
                   fill="currentColor"
@@ -112,8 +127,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/yousef-eslam-dev/"
                 className="text-gray-400 hover:text-white transition"
                 aria-label="Follow us on LinkedIn"
-                title="LinkedIn"
-              >
+                title="LinkedIn">
                 <svg
                   className="w-6 h-6"
                   fill="currentColor"
@@ -126,8 +140,7 @@ const Footer = () => {
                 href="https://facebook.com/yousefeslam214"
                 className="text-gray-400 hover:text-white transition"
                 aria-label="Follow us on Instagram"
-                title="Instagram"
-              >
+                title="Instagram">
                 <svg
                   className="w-6 h-6"
                   fill="currentColor"
