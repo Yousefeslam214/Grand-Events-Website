@@ -34,9 +34,12 @@ const HomePage = ({ data }) => {
               <button
                 className="mt-4 px-4 py-2 bg-[#ed0d5d]
                text-white rounded-md transition-colors duration-300
-                 text-sm pointer-events-none z-10">
+                 text-sm pointer-events-none">
                 Read More
               </button>
+              {/* <button className="mt-4 px-2 py-2 bg-[#ed0d5d] text-white text-lg font-bold rounded-md transition-colors duration-300 z-10">
+                Read More
+              </button> */}
             </div>
           </Link>
         ))}

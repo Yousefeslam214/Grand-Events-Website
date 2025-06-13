@@ -150,6 +150,7 @@ const Slider = ({ items }) => {
                   {/* Description */}
                   <motion.button
                     style={{ backgroundColor: "#ea1e63" }}
+                    aria-label="explore"
                     className=" btn
                     text-white px-4 py-2 rounded-sm  text-xs md:text-sm  lg:text-base xl:text-lg"
                     // whileHover={{ scale: 1.1 }}
@@ -168,6 +169,7 @@ const Slider = ({ items }) => {
         className="
        hidden sm:inline
         absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-white hover:bg-black/50 transition-all duration-300 transform hover:scale-110"
+        aria-label={`perevious slide`}
         onClick={prevSlide}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -187,6 +189,7 @@ const Slider = ({ items }) => {
       <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
         {items.map((_, index) => (
           <button
+            aria-label={`Go to slide ${index + 1}`}
             key={index}
             onClick={() => goToSlide(index)}
             className={`
