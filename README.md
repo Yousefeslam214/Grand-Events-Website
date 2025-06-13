@@ -11,16 +11,14 @@
     </ul>
   </div>
 
-  <div class="section screenshot">
-    <h2>📸 First Screen (UI)</h2>
-    <img src="/test-app/public/img/screenshots/grand-Website-screenShot.png" alt="UI Screenshot of Grand Events homepage">
-  </div>
+## 📸 First Screen (UI)
 
-  <div class="section screenshot">
-    <h2>⚡ Performance Report</h2>
-    <img src="public/img/screenshots/performance-report-desktop.png" alt="Lighthouse Performance Screenshot">
-    <img src="public/img/screenshots/performance-report-mobile.png" alt="Lighthouse Performance Screenshot">
-  </div>
+![UI Screenshot of Grand Events homepage](public/img/screenshots/grand-Website-screenShot.png)
+
+## ⚡ Performance Report
+
+![Lighthouse Performance Screenshot - Desktop](public/img/screenshots/performance-report-desktop.png)
+![Lighthouse Performance Screenshot - Mobile](public/img/screenshots/performance-report-mobile.png)
 
   <div class="section">
     <h2>🛠️ How to Run Locally</h2>
