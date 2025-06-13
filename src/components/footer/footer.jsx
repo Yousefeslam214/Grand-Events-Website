@@ -89,9 +89,8 @@ const Footer = () => {
                 </svg>
               </button> */}
               <button
-                className="bg-[#E91E63] hover:bg-[#E91E63] px-4 py-2 rounded-r transition cursor-pointer"
-                aria-label="Submit" // ← Describe what the button does
-              >
+                className="text-white bg-[#E91E63] hover:bg-[#E91E63] px-4 py-2 rounded-r transition cursor-pointer"
+                aria-label="Submit">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
