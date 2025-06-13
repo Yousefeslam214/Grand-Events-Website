@@ -13,12 +13,13 @@
 
   <div class="section screenshot">
     <h2>📸 First Screen (UI)</h2>
-    <img src="screenshots/first-screen.jpg" alt="UI Screenshot of Grand Events homepage">
+    <img src="/test-app/public/img/screenshots/grand-Website-screenShot.png" alt="UI Screenshot of Grand Events homepage">
   </div>
 
   <div class="section screenshot">
     <h2>⚡ Performance Report</h2>
-    <img src="screenshots/performance-report.jpg" alt="Lighthouse Performance Screenshot">
+    <img src="public/img/screenshots/performance-report-desktop.png" alt="Lighthouse Performance Screenshot">
+    <img src="public/img/screenshots/performance-report-mobile.png" alt="Lighthouse Performance Screenshot">
   </div>
 
   <div class="section">
